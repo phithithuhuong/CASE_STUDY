@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <style>
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 3px 2px;
+            cursor: pointer;
+        }
+
+        body {
+            font-family: "Trirong", serif;
+            text-align: center;
+
+            background-image: url("https://img.rawpixel.com/private/static/images/website/2022-05/rm422-054-x.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a96f4ebad85154b9e37b4e3d63a97663");
+        }
+        table, th, td{
+            background-color:beige;
+            padding: 10px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+    </style>
+        
+</head>
+<body onload="disPlay()">
+<!--onload : gọi hàm ra để hiển thị-->
+<div>
+    <h1  style="color:forestgreen;background-color: beige">Plan your work for the day</h1>
+</div>
+        <div align="center">
+            <table border="1px">
+                <tr>
+                    <!--                    MỤC TIÊU-->
+                    <th  style="color:forestgreen;background-color: beige" colspan="3">Target</th>  
+                </tr>
+                <tr>
+                    <td style="color: red" > Date</td>
+                    <td style="color: red"> Main goal for the day</td>
+                </tr>
+                <tr >
+
+                    <!--               ô nhập ngày và mục tiêu     -->
+                    <td><input type="date" name="" id="day"></td>
+                    <td><input type="text" name="" id="target" placeholder="Enter target"></td>
+                    <td rowspan="2">
+                        <!--                        ô ấn gửi xuống phần nội dung-->
+                        <button onclick="addTarget()">Add</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <div  align="center">
+<!--                            <h3 style="color:forestgreen">Target list:</h3>-->
+                <table border="1px" id="targettable" >
+                    <tr>
+                        <td style="color: red">Date</td>
+                        <td style="color: red">Target</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="contentEdit" align="center"></div>
+
+        </div>
+        <br>
+        <br>
+        <div align="center">
+            <table border="1px">
+                <tr>
+                    <!--                    CÔNG VIỆC-->
+                    <th style="color:forestgreen;background-color: beige" colspan="4">Work</th>
+                </tr>
+                <tr>
+                    <td style="color: red">Dates</td>
+                    <td style="color: red">Enter times</td>
+                    <td style="color: red">Enter work during that time</td>
+                </tr>
+                <tr>
+                    <!--                    ô nhập ngày,tgian,cv-->
+                    <td><input type="date" name="" id="daywork" placeholder="Date"></td>
+                    <td><input type="time" name="" id="time" placeholder="Enter time"></td>
+                    <td><input type="text" name="" id="cv" placeholder="Enter job"></td>
+                    <td>
+                        <button onclick="addWork()">Add</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+<!--                    <h3 style="color:forestgreen">Work list :</h3>-->
+            <table border="1px" id="worktable" >
+                <tr>
+                    <td style="color: red">Day</td>
+                    <td style="color: red">Time</td>
+                    <td style="color: red">Work</td>
+                </tr>
+                <tr>
+                    <!--                    bảng work-->
+                    <td id="ngay"></td>
+                    <td id="thoigian"></td>
+                    <td id="congviec"></td>
+                    <td>
+                        <button>Edit</button>
+                    </td>
+                    <td>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+<div id="showEdit"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
